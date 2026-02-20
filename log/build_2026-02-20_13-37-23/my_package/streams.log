@@ -1,0 +1,20 @@
+[0.007s] Invoking command in '/home/sarris/ros2_myproject/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target point_plugins_lib[0m
+[0.056s] [ 20%] [32mBuilding CXX object CMakeFiles/points_node.dir/src/Points_node.cpp.o[0m
+[0.067s] [ 40%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o[0m
+[0.255s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:[m[K In member function ‘[01m[Kvirtual double Geometry::Point2D::getZ() const[m[K’:
+[0.255s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:24:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kz_[m[K’ was not declared in this scope; did you mean ‘[01m[Kx_[m[K’?
+[0.256s]    24 |                 double getZ() const override { return [01;31m[Kz_[m[K; }
+[0.256s]       |                                                       [01;31m[K^~[m[K
+[0.256s]       |                                                       [32m[Kx_[m[K
+[0.257s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:[m[K In member function ‘[01m[Kvirtual void Geometry::Point2D::setZ(double)[m[K’:
+[0.257s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:28:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kz[m[K’ was not declared in this scope
+[0.257s]    28 |                 void setZ(double y) override { (void)[01;31m[Kz[m[K }
+[0.257s]       |                                                      [01;31m[K^[m[K
+[0.456s] gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:76: CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o] Error 1
+[0.456s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/point_plugins_lib.dir/all] Error 2
+[0.456s] gmake[1]: *** Waiting for unfinished jobs....
+[1.877s] [ 60%] [32m[1mLinking CXX executable points_node[0m
+[2.019s] [ 60%] Built target points_node
+[2.020s] gmake: *** [Makefile:146: all] Error 2
+[2.022s] Invoked command in '/home/sarris/ros2_myproject/build/my_package' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12

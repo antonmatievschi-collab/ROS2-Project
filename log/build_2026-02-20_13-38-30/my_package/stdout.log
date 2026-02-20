@@ -1,0 +1,3 @@
+[35m[1mConsolidate compiler generated dependencies of target point_plugins_lib[0m
+[ 40%] Built target points_node
+[ 60%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o[0m

@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+            "-fdiagnostics-color=always",
+            "-g",
+            "-I", "${workspaceFolder}/my_package/include",
+            "${workspaceFolder}/my_package/src/*.cpp",
+            "-o", "${workspaceFolder}/my_package/src/main_executable"
+],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
+        }
+    ]
+}

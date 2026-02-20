@@ -1,0 +1,74 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found pluginlib: 5.1.3 (/opt/ros/humble/share/pluginlib/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/sarris/ros2_myproject/build/my_package
+[ 40%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/points_node.dir/src/Points_node.cpp.o[0m
+[01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KGeometry/Point.hpp>: No such file or directory
+    1 | #include [01;31m[K"Geometry/Point.hpp>"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:76: CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp: No such file or directory
+    2 | #include [01;31m[K"Geometry/point.hpp"[m[K // Matches your include directory structure
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/points_node.dir/build.make:76: CMakeFiles/points_node.dir/src/Points_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/points_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:26:14:[m[K [01;31m[Kerror: [m[Kconflicting return type specified for ‘[01m[Kvirtual void Geometry::Point3D::setX(double)[m[K’
+   26 |         void [01;31m[KsetX[m[K(double x) override { x_ = x; }
+      |              [01;31m[K^~~~[m[K
+In file included from [01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:1[m[K:
+[01m[K/home/sarris/ros2_myproject/my_package/include/Geometry/Point.hpp:17:24:[m[K [01;36m[Knote: [m[Koverridden function is ‘[01m[Kvirtual double Geometry::Point::setX(double)[m[K’
+   17 |         virtual double [01;36m[KsetX[m[K(double x) =0;
+      |                        [01;36m[K^~~~[m[K
+[01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:27:14:[m[K [01;31m[Kerror: [m[Kconflicting return type specified for ‘[01m[Kvirtual void Geometry::Point3D::setY(double)[m[K’
+   27 |         void [01;31m[KsetY[m[K(double y) override { y_ = y; }
+      |              [01;31m[K^~~~[m[K
+In file included from [01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:1[m[K:
+[01m[K/home/sarris/ros2_myproject/my_package/include/Geometry/Point.hpp:18:24:[m[K [01;36m[Knote: [m[Koverridden function is ‘[01m[Kvirtual double Geometry::Point::setY(double)[m[K’
+   18 |         virtual double [01;36m[KsetY[m[K(double y) =0;
+      |                        [01;36m[K^~~~[m[K
+[01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:28:14:[m[K [01;31m[Kerror: [m[Kconflicting return type specified for ‘[01m[Kvirtual void Geometry::Point3D::setZ(double)[m[K’
+   28 |         void [01;31m[KsetZ[m[K(double z) override { z_ = z; }
+      |              [01;31m[K^~~~[m[K
+In file included from [01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:1[m[K:
+[01m[K/home/sarris/ros2_myproject/my_package/include/Geometry/Point.hpp:19:24:[m[K [01;36m[Knote: [m[Koverridden function is ‘[01m[Kvirtual double Geometry::Point::setZ(double)[m[K’
+   19 |         virtual double [01;36m[KsetZ[m[K(double z) =0;
+      |                        [01;36m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:90: CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/point_plugins_lib.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

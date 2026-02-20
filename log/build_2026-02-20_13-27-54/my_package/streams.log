@@ -1,0 +1,82 @@
+[0.007s] Invoking command in '/home/sarris/ros2_myproject/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sarris/ros2_myproject/my_package -DCMAKE_INSTALL_PREFIX=/home/sarris/ros2_myproject/install/my_package
+[0.017s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.108s] -- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+[0.127s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.129s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.132s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.139s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.146s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.167s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.167s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.246s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.279s] -- Found pluginlib: 5.1.3 (/opt/ros/humble/share/pluginlib/cmake)
+[0.332s] -- Configuring done
+[0.340s] -- Generating done
+[0.342s] -- Build files have been written to: /home/sarris/ros2_myproject/build/my_package
+[0.347s] Invoked command in '/home/sarris/ros2_myproject/build/my_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sarris/ros2_myproject/my_package -DCMAKE_INSTALL_PREFIX=/home/sarris/ros2_myproject/install/my_package
+[0.349s] Invoking command in '/home/sarris/ros2_myproject/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12
+[0.395s] [ 40%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o[0m
+[0.395s] [ 40%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o[0m
+[0.399s] [ 60%] [32mBuilding CXX object CMakeFiles/points_node.dir/src/Points_node.cpp.o[0m
+[0.403s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp>: No such file or directory
+[0.404s]     1 | #include [01;31m[K"Geometry/point.hpp>"[m[K
+[0.404s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[0.404s] compilation terminated.
+[0.404s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp: No such file or directory
+[0.404s]     1 | #include [01;31m[K"Geometry/point.hpp"[m[K
+[0.404s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.404s] compilation terminated.
+[0.404s] gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:76: CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o] Error 1
+[0.404s] gmake[2]: *** Waiting for unfinished jobs....
+[0.405s] gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:90: CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o] Error 1
+[0.405s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/point_plugins_lib.dir/all] Error 2
+[0.405s] gmake[1]: *** Waiting for unfinished jobs....
+[0.420s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[0.420s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:7:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kpluginlib[m[K’ has not been declared
+[0.420s]     7 |   [01;31m[Kpluginlib[m[K::ClassLoader<Geometry::Point> point_loader ("my_package","Geometry::Point");
+[0.420s]       |   [01;31m[K^~~~~~~~~[m[K
+[0.420s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:7:26:[m[K [01;31m[Kerror: [m[K‘[01m[KGeometry[m[K’ has not been declared
+[0.420s]     7 |   pluginlib::ClassLoader<[01;31m[KGeometry[m[K::Point> point_loader ("my_package","Geometry::Point");
+[0.420s]       |                          [01;31m[K^~~~~~~~[m[K
+[0.421s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:7:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kpoint_loader[m[K’ was not declared in this scope
+[0.421s]     7 |   pluginlib::ClassLoader<Geometry::Point> [01;31m[Kpoint_loader[m[K ("my_package","Geometry::Point");
+[0.421s]       |                                           [01;31m[K^~~~~~~~~~~~[m[K
+[0.421s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:11:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kshare_ptr[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[0.421s]    11 |         std::[01;31m[Kshare_ptr[m[K<Geometry::Point> p2d=point_loader.createSharedInstance("Geometry::Point2D");
+[0.421s]       |              [01;31m[K^~~~~~~~~[m[K
+[0.422s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:11:24:[m[K [01;31m[Kerror: [m[K‘[01m[KGeometry[m[K’ has not been declared
+[0.422s]    11 |         std::share_ptr<[01;31m[KGeometry[m[K::Point> p2d=point_loader.createSharedInstance("Geometry::Point2D");
+[0.422s]       |                        [01;31m[K^~~~~~~~[m[K
+[0.422s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:11:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kp2d[m[K’ was not declared in this scope
+[0.422s]    11 |         std::share_ptr<Geometry::Point> [01;31m[Kp2d[m[K=point_loader.createSharedInstance("Geometry::Point2D");
+[0.422s]       |                                         [01;31m[K^~~[m[K
+[0.422s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:13:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kshare_ptr[m[K’ is not a member of ‘[01m[Kstd[m[K’
+[0.422s]    13 |         std::[01;31m[Kshare_ptr[m[K<Geometry::Point> p3d=point_loader.createSharedInstance("Geometry::Point3D");
+[0.422s]       |              [01;31m[K^~~~~~~~~[m[K
+[0.422s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:13:24:[m[K [01;31m[Kerror: [m[K‘[01m[KGeometry[m[K’ has not been declared
+[0.422s]    13 |         std::share_ptr<[01;31m[KGeometry[m[K::Point> p3d=point_loader.createSharedInstance("Geometry::Point3D");
+[0.423s]       |                        [01;31m[K^~~~~~~~[m[K
+[0.423s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:13:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kp3d[m[K’ was not declared in this scope
+[0.423s]    13 |         std::share_ptr<Geometry::Point> [01;31m[Kp3d[m[K=point_loader.createSharedInstance("Geometry::Point3D");
+[0.423s]       |                                         [01;31m[K^~~[m[K
+[0.423s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:20:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[Kcatch[m[K’ at end of input
+[0.423s]    20 | }
+[0.423s]       |  [01;31m[K^[m[K
+[0.423s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:20:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K([m[K’ at end of input
+[0.423s]    20 | }
+[0.423s]       |  [01;31m[K^[m[K
+[0.424s]       |  [32m[K([m[K
+[0.424s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:20:2:[m[K [01;31m[Kerror: [m[Kexpected type-specifier at end of input
+[0.424s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:20:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ at end of input
+[0.424s]    20 | }
+[0.424s]       |  [01;31m[K^[m[K
+[0.424s]       |  [32m[K)[m[K
+[0.424s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:20:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ at end of input
+[0.424s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:20:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[0.424s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:4:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[0.424s]     4 | [01;36m[K{[m[K
+[0.424s]       | [01;36m[K^[m[K
+[0.424s] gmake[2]: *** [CMakeFiles/points_node.dir/build.make:76: CMakeFiles/points_node.dir/src/Points_node.cpp.o] Error 1
+[0.425s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/points_node.dir/all] Error 2
+[0.425s] gmake: *** [Makefile:146: all] Error 2
+[0.426s] Invoked command in '/home/sarris/ros2_myproject/build/my_package' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12

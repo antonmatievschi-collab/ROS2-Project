@@ -1,0 +1,66 @@
+[0.007s] Invoking command in '/home/sarris/ros2_myproject/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12
+[0.050s] [35m[1mConsolidate compiler generated dependencies of target point_plugins_lib[0m
+[0.059s] [ 20%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o[0m
+[0.059s] [ 40%] [32mBuilding CXX object CMakeFiles/points_node.dir/src/Points_node.cpp.o[0m
+[0.063s] [ 60%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o[0m
+[0.132s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp: No such file or directory
+[0.132s]     2 | #include [01;31m[K"Geometry/point.hpp"[m[K // Matches your include directory structure
+[0.132s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.133s] compilation terminated.
+[0.134s] gmake[2]: *** [CMakeFiles/points_node.dir/build.make:76: CMakeFiles/points_node.dir/src/Points_node.cpp.o] Error 1
+[0.134s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/points_node.dir/all] Error 2
+[0.134s] gmake[1]: *** Waiting for unfinished jobs....
+[0.241s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:[m[K In member function ‘[01m[Kvirtual double Geometry::Point2D::magnitude() const[m[K’:
+[0.241s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:19:41:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ksqrt(double, double)[m[K’
+[0.242s]    19 |                         return [01;31m[Kstd::sqrt(x_*x_,y_*y_)[m[K;
+[0.242s]       |                                [01;31m[K~~~~~~~~~^~~~~~~~~~~~~[m[K
+[0.244s] In file included from [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:3[m[K:
+[0.245s] [01m[K/usr/include/c++/11/cmath:475:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr typename __gnu_cxx::__enable_if<std::__is_integer<_Tp>::__value, double>::__type std::sqrt(_Tp)[m[K’
+[0.245s]   475 |     [01;36m[Ksqrt[m[K(_Tp __x)
+[0.245s]       |     [01;36m[K^~~~[m[K
+[0.245s] [01m[K/usr/include/c++/11/cmath:475:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.245s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:19:41:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[0.245s]    19 |                         return [01;36m[Kstd::sqrt(x_*x_,y_*y_)[m[K;
+[0.245s]       |                                [01;36m[K~~~~~~~~~^~~~~~~~~~~~~[m[K
+[0.245s] In file included from [01m[K/usr/include/features.h:486[m[K,
+[0.245s]                  from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:39[m[K,
+[0.245s]                  from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:586[m[K,
+[0.246s]                  from [01m[K/usr/include/c++/11/iostream:38[m[K,
+[0.246s]                  from [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:2[m[K:
+[0.246s] [01m[K/usr/include/x86_64-linux-gnu/bits/mathcalls.h:143:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kdouble sqrt(double)[m[K’
+[0.246s]   143 | [01;36m[K__MATHCALL[m[K (sqrt,, (_Mdouble_ __x));
+[0.246s]       | [01;36m[K^~~~~~~~~~[m[K
+[0.246s] [01m[K/usr/include/x86_64-linux-gnu/bits/mathcalls.h:143:1:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[0.246s] In file included from [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:3[m[K:
+[0.246s] [01m[K/usr/include/c++/11/cmath:463:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr float std::sqrt(float)[m[K’
+[0.246s]   463 |   [01;36m[Ksqrt[m[K(float __x)
+[0.246s]       |   [01;36m[K^~~~[m[K
+[0.246s] [01m[K/usr/include/c++/11/cmath:463:3:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[0.246s] [01m[K/usr/include/c++/11/cmath:467:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr long double std::sqrt(long double)[m[K’
+[0.246s]   467 |   [01;36m[Ksqrt[m[K(long double __x)
+[0.247s]       |   [01;36m[K^~~~[m[K
+[0.247s] [01m[K/usr/include/c++/11/cmath:467:3:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[0.440s] In file included from [01m[K/opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:57[m[K,
+[0.440s]                  from [01m[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:55[m[K,
+[0.440s]                  from [01m[K/opt/ros/humble/include/pluginlib/pluginlib/class_list_macros.hpp:40[m[K,
+[0.441s]                  from [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:38[m[K:
+[0.441s] /opt/ros/humble/include/class_loader/class_loader/meta_object.hpp: In instantiation of ‘[01m[KB* class_loader::impl::MetaObject<C, B>::create() const [with C = Geometry::Point2D; B = Geometry::Point][m[K’:
+[0.441s] [01m[K/opt/ros/humble/include/class_loader/class_loader/meta_object.hpp:216:7:[m[K   required from here
+[0.441s] [01m[K/opt/ros/humble/include/class_loader/class_loader/meta_object.hpp:218:12:[m[K [01;31m[Kerror: [m[Kinvalid new-expression of abstract class type ‘[01m[KGeometry::Point2D[m[K’
+[0.441s]   218 |     return [01;31m[Knew C[m[K;
+[0.441s]       |            [01;31m[K^~~~~[m[K
+[0.441s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:7:15:[m[K [01;36m[Knote: [m[K  because the following virtual functions are pure within ‘[01m[KGeometry::Point2D[m[K’:
+[0.441s]     7 |         class [01;36m[KPoint2D[m[K : public Geometry::Point
+[0.441s]       |               [01;36m[K^~~~~~~[m[K
+[0.441s] In file included from [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:1[m[K:
+[0.441s] [01m[K/home/sarris/ros2_myproject/my_package/include/Geometry/Point.hpp:14:24:[m[K [01;36m[Knote: [m[K    ‘[01m[Kvirtual double Geometry::Point::getZ() const[m[K’
+[0.441s]    14 |         virtual double [01;36m[KgetZ[m[K() const=0;
+[0.442s]       |                        [01;36m[K^~~~[m[K
+[0.442s] [01m[K/home/sarris/ros2_myproject/my_package/include/Geometry/Point.hpp:19:22:[m[K [01;36m[Knote: [m[K    ‘[01m[Kvirtual void Geometry::Point::setZ(double)[m[K’
+[0.442s]    19 |         virtual void [01;36m[KsetZ[m[K(double z) =0;
+[0.442s]       |                      [01;36m[K^~~~[m[K
+[0.450s] gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:76: CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o] Error 1
+[0.450s] gmake[2]: *** Waiting for unfinished jobs....
+[0.512s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/point_plugins_lib.dir/all] Error 2
+[0.512s] gmake: *** [Makefile:146: all] Error 2
+[0.514s] Invoked command in '/home/sarris/ros2_myproject/build/my_package' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12

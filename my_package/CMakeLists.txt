@@ -1,35 +1,72 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.5)
 project(my_package)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+# Default to C++17
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 
-# find dependencies
+# -----------------------------------------------------------------------------
+# 1. Dependencies
+# -----------------------------------------------------------------------------
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(pluginlib REQUIRED)
 
-add_executable(my_node src/my_node.cpp)
-target_include_directories(my_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-target_compile_features(my_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+# -----------------------------------------------------------------------------
+# 2. Include Directories
+# -----------------------------------------------------------------------------
+# This allows the compiler to find "Geometry/point.hpp"
+include_directories(include)
 
-install(TARGETS my_node
-  DESTINATION lib/${PROJECT_NAME})
+# -----------------------------------------------------------------------------
+# 3. Library Definition (Plugins)
+# -----------------------------------------------------------------------------
+# Fixed: Matching your exact filenames from 'ls' output
+add_library(point_plugins_lib SHARED
+  src/Point2D.cpp
+  src/Point3D.cpp
+)
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
-  set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
+ament_target_dependencies(point_plugins_lib
+  pluginlib
+  rclcpp
+)
+
+# -----------------------------------------------------------------------------
+# 4. Executable Definition (The Node)
+# -----------------------------------------------------------------------------
+# Fixed: Removed the duplicate add_executable and matched 'Points_node.cpp'
+add_executable(points_node src/Points_node.cpp)
+
+ament_target_dependencies(points_node
+  pluginlib
+  rclcpp
+)
+
+# -----------------------------------------------------------------------------
+# 5. Install Instructions
+# -----------------------------------------------------------------------------
+# Install the binaries
+install(TARGETS points_node point_plugins_lib
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# Install the headers
+install(DIRECTORY include/
+  DESTINATION include
+)
+
+# Install the plugin description file (Crucial for pluginlib)
+install(FILES plugins.xml
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# -----------------------------------------------------------------------------
+# 6. Exporting
+# -----------------------------------------------------------------------------
+ament_export_libraries(point_plugins_lib)
+ament_export_dependencies(pluginlib rclcpp)
+pluginlib_export_plugin_description_file(my_package plugins.xml)
 
 ament_package()

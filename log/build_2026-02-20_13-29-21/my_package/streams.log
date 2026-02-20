@@ -1,0 +1,26 @@
+[0.010s] Invoking command in '/home/sarris/ros2_myproject/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12
+[0.062s] [35m[1mConsolidate compiler generated dependencies of target points_node[0m
+[0.080s] [ 20%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o[0m
+[0.080s] [ 40%] [32mBuilding CXX object CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o[0m
+[0.084s] [ 60%] [32mBuilding CXX object CMakeFiles/points_node.dir/src/Points_node.cpp.o[0m
+[0.087s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point3D.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp: No such file or directory
+[0.087s]     1 | #include [01;31m[K"Geometry/point.hpp"[m[K
+[0.087s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.087s] compilation terminated.
+[0.088s] [01m[K/home/sarris/ros2_myproject/my_package/src/Point2D.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp>: No such file or directory
+[0.088s]     1 | #include [01;31m[K"Geometry/point.hpp>"[m[K
+[0.088s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[0.088s] compilation terminated.
+[0.088s] gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:90: CMakeFiles/point_plugins_lib.dir/src/Point3D.cpp.o] Error 1
+[0.088s] gmake[2]: *** Waiting for unfinished jobs....
+[0.088s] gmake[2]: *** [CMakeFiles/point_plugins_lib.dir/build.make:76: CMakeFiles/point_plugins_lib.dir/src/Point2D.cpp.o] Error 1
+[0.088s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/point_plugins_lib.dir/all] Error 2
+[0.088s] gmake[1]: *** Waiting for unfinished jobs....
+[0.189s] [01m[K/home/sarris/ros2_myproject/my_package/src/Points_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[KGeometry/point.hpp: No such file or directory
+[0.189s]     2 | #include [01;31m[K"Geometry/point.hpp"[m[K // Matches your include directory structure
+[0.189s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[0.189s] compilation terminated.
+[0.190s] gmake[2]: *** [CMakeFiles/points_node.dir/build.make:76: CMakeFiles/points_node.dir/src/Points_node.cpp.o] Error 1
+[0.190s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/points_node.dir/all] Error 2
+[0.190s] gmake: *** [Makefile:146: all] Error 2
+[0.192s] Invoked command in '/home/sarris/ros2_myproject/build/my_package' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sarris/ros2_myproject/build/my_package -- -j12 -l12
